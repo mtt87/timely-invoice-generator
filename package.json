@@ -1,0 +1,24 @@
+{
+  "name": "timely-invoice-generator",
+  "version": "0.1.0",
+  "description": "Bridge to automatically generate an invoice from https://timelyapp.com/ using https://invoice-generator.com API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mtt87/timely-invoice-generator.git"
+  },
+  "author": "Mattia Asti",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mtt87/timely-invoice-generator/issues"
+  },
+  "homepage": "https://github.com/mtt87/timely-invoice-generator#readme",
+  "dependencies": {
+    "express": "^4.13.1",
+    "popsicle": "^0.5.12",
+    "simple-oauth2": "^0.2.1"
+  }
+}

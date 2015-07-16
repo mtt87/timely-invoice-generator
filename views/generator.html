@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Generate Invoice</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <style media="screen">
+    body {
+      padding-top: 40px;
+    }
+  </style>
+</head>
+
+<body ng-app="InvoiceGenerator">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3" ng-controller="ProjectListCtrl">
+        <p>Project list:</p>
+        <ul ng-show="projects">
+          <li ng-repeat="project in projects"><a ng-click="createInvoice(project.id)">{{project.client.name}}</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-9">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui perferendis, alias deserunt eum doloribus, sapiente ducimus tempore delectus quidem vitae animi harum expedita voluptatibus molestiae, asperiores assumenda repudiandae quos! Error.</p>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+  <script>
+    angular.module('InvoiceGenerator', [])
+      .controller('ProjectListCtrl', ['$scope', '$http', function($scope, $http) {
+        $http.get('/api/projects').then(function(res) {
+          console.log(res.data);
+          // $scope.projects = res.data;
+        }, function(err) {
+          console.log(err);
+        });
+      }]);
+  </script>
+</body>
+
+</html>
